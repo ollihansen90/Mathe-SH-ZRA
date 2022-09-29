@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def conv1d(data, kernel, pad=(0,0), padmode="reflect"):
     if isinstance(pad, int):
@@ -26,4 +27,10 @@ def exp_kernel(len, sig=1):
 def get_data():
     filename = "data.csv"
     data = pd.read_csv(filename, sep=",")
-    return data["tempmax"].to_numpy()
+    return data["tempmax"].to_numpy()[-500:]
+
+def plot(data, data_filtered):
+    plt.figure()
+    plt.plot(data)
+    plt.plot(data_filtered)
+    plt.show()
