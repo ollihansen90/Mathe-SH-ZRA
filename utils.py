@@ -25,5 +25,5 @@ def exp_kernel(len, sig=1):
 
 def get_data():
     filename = "data.csv"
-    data = pd.read_csv(filename, sep=";")
+    data = pd.read_csv(filename, sep=",")
     return data["tempmax"].to_numpy()
