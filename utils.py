@@ -33,4 +33,6 @@ def plot(data, data_filtered):
     plt.figure()
     plt.plot(data)
     plt.plot(data_filtered)
+    plt.grid()
+    plt.legend(["ZR","gefilterte ZR"])
     plt.show()
