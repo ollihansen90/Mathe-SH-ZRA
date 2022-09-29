@@ -30,7 +30,7 @@ def get_data():
     return data["tempmax"].to_numpy()[-500:]
 
 def plot(data, data_filtered):
-    plt.figure()
+    plt.figure(figsize=[10,5])
     plt.plot(data)
     plt.plot(data_filtered)
     plt.grid()
