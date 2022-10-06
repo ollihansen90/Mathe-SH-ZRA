@@ -41,14 +41,14 @@ def binafy(array):
     facs = (2**np.arange(len(array))[::-1])[:,None]
     return np.sum(array*facs, axis=0)
 
-def get_histogramm(array):
-    histogramm = np.zeros(np.max(array)+1)
+def get_histogramm(array, k_size=32):
+    histogramm = np.zeros(k_size)
     for v in array:
         histogramm[v] += 1
     return histogramm
-    
+
 def entropy(histogramm):
     N = np.sum(histogramm)
     histogramm_N = histogramm/N
-    h = -np.sum(histogramm_N*np.log(histogramm_N))
+    h = -np.sum(histogramm_N*np.log(histogramm_N+1e-10))
     return h, np.log(N)
